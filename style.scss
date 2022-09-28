@@ -1,0 +1,73 @@
+@use "./partials/palette";
+
+.page {
+    background-color: palette.$background-colour;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    color: palette.$title-colour;
+}
+
+.outputBox {
+    width: 100px;
+}
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__key {
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0.5rem;
+        margin: 2px 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-radius: 5px;
+        background-color: palette.$key-colour;
+        border: none;
+        color: white;
+        &:hover {
+            background-color: palette.$key-hover;
+            color: palette.$lightest-colour;
+        }
+        &:active {
+            background-color: palette.$key-click;
+            color: palette.$lightest-colour;
+        }
+    }
+}
+
+.board {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+    &__letter-row {
+        display: flex;
+        &--letter-box {
+            border: 2px solid palette.$incorrect-colour;
+            background-color: palette.$blank-colour;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            margin: 2px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+    }
+}
+.filled-box {
+    border: 2px solid black;
+}
+
+.letter-row {
+    display: flex;
+}
