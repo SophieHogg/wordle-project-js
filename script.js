@@ -5,19 +5,23 @@ import {
     insertLetter,
     backspaceLetter,
     successResponse,
+    failureResponse,
 } from "./Utils.js";
+
+let userFeedbackText = document.getElementById("userFeedbackText");
 
 const numberOfGuesses = 6;
 let guessesRemaining = numberOfGuesses;
 let currentGuess = [];
 let nextLetter = 0;
 let wordToBeGuessed = selectWord(words);
-console.log(wordToBeGuessed);
-
+let correctlyGuessed = false;
 initBoard(numberOfGuesses);
 
+console.log(wordToBeGuessed);
+
 document.addEventListener("keyup", (e) => {
-    if (guessesRemaining == 0) {
+    if (guessesRemaining == 0 || correctlyGuessed == true) {
         return;
     }
     let pressedKey = String(e.key);
@@ -53,9 +57,9 @@ function checkGuess(wordToBeGuessed) {
             6 - guessesRemaining
         ];
     let guessString = currentGuess.join("");
-    console.log(guessString);
+
     let arrayCorrectWord = Array.from(wordToBeGuessed);
-    console.log;
+
     if (guessString.length != 5) {
         return;
     }
@@ -74,14 +78,22 @@ function checkGuess(wordToBeGuessed) {
     }
 
     if (guessString == wordToBeGuessed) {
-        console.log(
+        const successText = document.createTextNode(
             successResponse(
                 wordToBeGuessed,
                 numberOfGuesses - guessesRemaining + 1
             )
         );
+        userFeedbackText.appendChild(successText);
+        correctlyGuessed = true;
     }
     guessesRemaining = guessesRemaining - 1;
     nextLetter = 0;
     currentGuess = [];
+    if (guessesRemaining == 0) {
+        const failureText = document.createTextNode(
+            failureResponse(wordToBeGuessed)
+        );
+        userFeedbackText.appendChild(failureText);
+    }
 }

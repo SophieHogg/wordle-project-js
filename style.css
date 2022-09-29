@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 .page {
   background-color: #bb81cd;
   width: 100%;
@@ -8,6 +9,9 @@
 
 .title {
   color: #9b3294;
+  font-family: "Dosis", sans-serif;
+  font-weight: 1000;
+  font-size: 50px;
 }
 
 .outputBox {
@@ -71,4 +75,10 @@
 
 .letter-row {
   display: flex;
+}
+
+#userFeedbackText {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  font-weight: 200;
 }

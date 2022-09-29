@@ -7,7 +7,7 @@ export function selectWord(words) {
 }
 
 export function failureResponse(wordToBeGuessed) {
-    return `You failed to guess ${wordToBeGuessed} in 6 attempts.`;
+    return `You failed to guess "${wordToBeGuessed}" in 6 attempts.`;
 }
 
 export function successResponse(wordToBeGuessed, guessesTaken) {
@@ -15,7 +15,7 @@ export function successResponse(wordToBeGuessed, guessesTaken) {
     if (guessesTaken == 1) {
         attemptWord = "attempt";
     }
-    return `Congratulations, you guessed ${wordToBeGuessed} in ${guessesTaken} ${attemptWord}!`;
+    return `Congratulations, you guessed "${wordToBeGuessed}" in ${guessesTaken} ${attemptWord}!`;
 }
 
 export function initBoard(numberOfGuesses) {
