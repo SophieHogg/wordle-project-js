@@ -39,5 +39,6 @@ I aim for this browser application to be available down to very narrow widths, s
 -   Add dark mode
 -   colour in keyboard with correct/incorrect guesses
 -   enable use of keyboard(?)
+-   fix responsiveness!
 
 NOTE: At current, the correct answer is logged to the console for testing purposes.
